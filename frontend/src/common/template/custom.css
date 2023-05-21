@@ -1,0 +1,112 @@
+.wrapper {
+  height: 100vh !important;
+}
+
+.main-header .logo {
+  height: 55px !important;
+  text-decoration: none;
+}
+.dropdown-toggle {
+  text-decoration: none !important;
+}
+
+.sidebar-menu a {
+  font-size: 14px !important;
+  text-decoration: none;
+}
+.sidebar-toggle {
+  text-decoration: none;
+}
+
+.main-footer {
+  position: relative !important;
+  bottom: 0px;
+  width: 100%;
+}
+.main-footer a {
+  text-decoration: none !important;
+}
+
+.small-box .icon {
+  display: inline-block;
+}
+
+.tabset {
+  font-size: 14px !important;
+  text-decoration: none;
+  background: none;
+  border: none;
+  padding: 9px 6px;
+  font: inherit;
+  cursor: pointer;
+}
+.tabset:focus {
+  outline: none;
+}
+
+.button-link {
+  background: none;
+  border: none;
+  padding: 6px;
+  font: inherit;
+  cursor: pointer;
+}
+
+.button-link:focus {
+  outline: none;
+}
+
+.table {
+  background-color: #f5f5f596;
+}
+.table thead {
+  background-color: #e5e4e4;
+}
+
+/* .table,
+.fa,
+.box-body,
+.box-footer,
+input,
+button {
+  font-size: 14px !important;
+} */
+
+.table-actions {
+  width: 150px;
+}
+
+@media screen and (max-width: 430px) {
+  .recharts-legend-wrapper,
+  .recharts-surface,
+  .recharts-cartesian-grid {
+    width: 100% !important;
+  }
+}
+
+.select {
+  width: 180px;
+  height: 32px;
+  border-radius: 10px;
+  background: #e5e4e4;
+}
+.select select {
+  background: #e5e4e4;
+  border: none;
+  color: #0e0d0d;
+  text-align: left;
+  padding-right: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.select select {
+  outline: none;
+}
+
+.item {
+  background-color: #fff;
+  color: #222222;
+  cursor: pointer;
+}
