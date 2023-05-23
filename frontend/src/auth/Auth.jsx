@@ -11,6 +11,7 @@ import Input from '../common/form/InputAuth';
 
 import { login, signup } from './authActions';
 import Loader from '../common/template/Loader';
+import Logo from '../assets/my_money_app3.png';
 
 class Auth extends Component {
   constructor(props) {
@@ -58,14 +59,10 @@ class Auth extends Component {
     return (
       <div className="login-box">
         <div className="login-logo">
-          <b>
-            <i className="fa-solid fa-money-bill-1-wave fa-bounce me-2"></i>
-            My
-          </b>{' '}
-          Money
+          <img src={Logo} alt="" className="img-fluid" />
         </div>
         <div className="login-box-body">
-          <h3 className="text-center title">Bem vindo!</h3>
+          <h3 className="text-center title"> BEM VINDO!</h3>
           <p className="message">
             {loginMode
               ? 'Entre e aproveite todos os benefícios!'
