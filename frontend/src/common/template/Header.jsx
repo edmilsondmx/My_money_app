@@ -11,7 +11,7 @@ const Header = (props) => {
         <span className="logo-lg">
           <b>
             {' '}
-            <i className="fa-solid fa-money-bill-1-wave fa-bounce me-2"></i> My
+            <i className="fa fa-money me-2"></i> My
           </b>{' '}
           Money
         </span>

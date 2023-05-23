@@ -51,7 +51,7 @@ class BillingChart extends Component {
         <div className="d-flex justify-content-center align-items-center select mb-4">
           <i className="fa-regular fa-calendar-check me-2 fs-3"></i>
           <select onChange={handleYearChange}>
-            <option disabled selected className="item" value={0}>
+            <option disabled className="item" selected>
               Selecione o ano
             </option>
             {arrayOfYears.map((item) => (
