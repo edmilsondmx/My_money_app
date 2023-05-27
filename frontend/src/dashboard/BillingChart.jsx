@@ -40,10 +40,13 @@ class BillingChart extends Component {
     });
     const width = (window.innerWidth / 100) * 80;
     const height = (window.innerHeight / 100) * 30;
-
     const handleYearChange = (e) => {
-      const year = e.target.value || '2017';
-      this.props.getByYear(year);
+      if (e.target.value === 'Selecione o ano') {
+        return;
+      } else {
+        const year = e.target.value || '2017';
+        this.props.getByYear(year);
+      }
     };
 
     return (
@@ -51,9 +54,7 @@ class BillingChart extends Component {
         <div className="d-flex justify-content-center align-items-center select mb-4">
           <i className="fa-regular fa-calendar-check me-2 fs-3"></i>
           <select onChange={handleYearChange}>
-            <option disabled className="item" selected>
-              Selecione o ano
-            </option>
+            <option className="item">Selecione o ano</option>
             {arrayOfYears.map((item) => (
               <option className="item" key={item} value={item}>
                 {item}
@@ -77,9 +78,9 @@ class BillingChart extends Component {
               bottom: 5,
             }}
           >
-            <CartesianGrid strokeDasharray="3 3" className="text-center" />
+            <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="month" />
-            <YAxis />
+            <YAxis type="number" />
             <Tooltip />
             <Legend />
             <Bar dataKey="Créditos" fill="#00A65A" />
@@ -91,6 +92,9 @@ class BillingChart extends Component {
     );
   }
 }
-const mapStateToProps = (state) => ({ list: state.billingCycle.list, years: state.dashboard.year });
+const mapStateToProps = (state) => ({
+  list: state.billingCycle.list,
+  years: state.dashboard.year,
+});
 const mapDispatchToProps = (dispatch) => bindActionCreators({ getList, getByYear }, dispatch);
 export default connect(mapStateToProps, mapDispatchToProps)(BillingChart);

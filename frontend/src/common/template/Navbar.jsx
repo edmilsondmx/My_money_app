@@ -41,7 +41,7 @@ class Navbar extends Component {
 
               <li className="user-footer">
                 <div className="pull-right">
-                  <button onClick={this.props.logout} className="btn btn-default btn-flat rounded">
+                  <button onClick={this.props.logout} className="btn btn-secondary btn-flat rounded">
                     Sair
                   </button>
                 </div>

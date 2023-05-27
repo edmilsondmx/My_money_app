@@ -28,7 +28,7 @@ class Pagination extends Component {
     const testPage = Math.ceil(count / itemsPerPage);
     return (
       <div className="d-flex justify-content-center align-items-center select mb-4">
-        {testPage === 1 ? (
+        {testPage === 1 || testPage === 0 ? (
           <span className="d-flex justify-content-center align-items-center text-secondary">
             <i className="fa fa-file me-2"></i>
             Página única

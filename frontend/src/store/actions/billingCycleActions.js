@@ -9,10 +9,12 @@ export const BILLING_CYCLES_FETCHED_PER_PAGE = 'BILLING_CYCLES_FETCHED_PER_PAGE'
 export const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE';
 export const BILLING_CYCLE_COUNT = 'BILLING_CYCLE_COUNT';
 
+const userKey = '_mymoney_user';
+const user = JSON.parse(localStorage.getItem(userKey));
 const INITIAL_VALUES = { credits: [{}], debts: [{}] };
 
 export const getList = () => {
-  const request = axios.get(`${BASE_URL}`);
+  const request = axios.get(`${BASE_URL}/user/${user.id}`);
   return {
     type: BILLING_CYCLES_FETCHED,
     payload: request,
@@ -22,7 +24,7 @@ export const getList = () => {
 export const getListPag = (skip, limit) => {
   skip = `?skip=${skip}`;
   limit = `&limit=${limit}`;
-  const request = axios.get(`${BASE_URL}${skip}${limit}`);
+  const request = axios.get(`${BASE_URL}/user/${user.id}/${skip}${limit}`);
   return {
     type: BILLING_CYCLES_FETCHED_PER_PAGE,
     payload: request,
@@ -42,6 +44,7 @@ export const remove = (values) => {
 };
 
 const submit = (values, method) => {
+  values = { ...values, userId: user.id };
   return (dispatch) => {
     const id = values._id ? values._id : '';
     axios[method](`${BASE_URL}/${id}`, values)
@@ -80,7 +83,7 @@ export const setCurrentPage = (page) => ({
 });
 
 export const getCount = () => {
-  const request = axios.get(`${BASE_URL}/count`);
+  const request = axios.get(`${BASE_URL}/user/${user.id}/count`);
   return {
     type: BILLING_CYCLE_COUNT,
     payload: request,
