@@ -10,6 +10,7 @@ module.exports = function (server) {
 
   const BillingCycle = require('../api/billingCycle/billingCycleService');
   BillingCycle.register(protectedApi, '/billingCycles');
+  BillingCycle.register(protectedApi, '/billingCycles/user/:userId', 'get');
 
   // Rotas abertas
   const openApi = express.Router();
