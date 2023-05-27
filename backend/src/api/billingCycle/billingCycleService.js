@@ -44,13 +44,14 @@ BillingCycle.route('delete', (req, res, next) => {
 });
 
 BillingCycle.route('get', (req, res, next) => {
+  const userId = req.params.userId;
   const skip = parseInt(req.query.skip) || 0;
   const limit = parseInt(req.query.limit) || 10;
   const year = req.query.year;
 
   const query = year ? { year: year } : {};
-
-  BillingCycle.find(query)
+  const queries = userId ? { ...query, userId: userId } : query;
+  BillingCycle.find(queries)
     .sort({ year: -1, month: -1 })
     .skip(skip)
     .limit(limit)
@@ -65,7 +66,10 @@ BillingCycle.route('get', (req, res, next) => {
 });
 
 BillingCycle.route('count', (req, res, next) => {
-  BillingCycle.countDocuments()
+  const userId = req.params.userId;
+  const query = userId ? { userId: userId } : {};
+  BillingCycle.find(query)
+    .countDocuments()
     .exec()
     .then((count) => {
       res.json({ value: count });
@@ -77,7 +81,11 @@ BillingCycle.route('count', (req, res, next) => {
 });
 
 BillingCycle.route('summary', (req, res, next) => {
+  const userId = req.params.userId;
   BillingCycle.aggregate([
+    {
+      $match: { userId: userId },
+    },
     {
       $project: { credit: { $sum: '$credits.value' }, debt: { $sum: '$debts.value' } },
     },

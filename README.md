@@ -28,7 +28,7 @@
 
 <h2 id="sobre">Sobre</h2>
 
-O My Moneu App foi um projeto desenvolvido afins de estudo. Se trada de uma carteira digital, onde após cadastro e login, o usuário possa cadastrar receitas e despesas. A aplicação conta com dashboard com totais de créditos, debitos e consolidado e gráfico separado por ano, além de uma interface intuitiva para cadastro de novo ciclo, alteração ou remoção.
+O My Money App foi um projeto desenvolvido afins de estudo. Se trada de uma carteira digital, onde após cadastro e login, o usuário possa cadastrar receitas e despesas. A aplicação conta com dashboard com totais de créditos, debitos e consolidado e gráfico separado por ano, além de uma interface intuitiva para cadastro de novo ciclo, alteração ou remoção.
 
 <h2 id="especificacoes">Especificações</h2>
 
@@ -123,7 +123,7 @@ Na tela de login clique em <b>Novo Usuario? Registrar aqui!</b> -> cadastre-se (
 - Registro de débitos e créditos, com nome e valor, e para débito o status;
 - Possibilidade de alteração ou remoção de qualquer informação.
 - Controle de estado da aplicação utilizando Redux;
-- Menssagens visuais de confirmações ou erros de cadastro.
+- Mensagens visuais de confirmações ou erros de cadastro.
 
 <h2 id="desenvolvedor">Desenvolvedor</h2>
 

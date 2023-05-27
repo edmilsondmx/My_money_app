@@ -21,6 +21,7 @@ const debtSchema = new mongoose.Schema({
 });
 
 const billingCycleSchema = new mongoose.Schema({
+  userId: { type: String, required: true },
   name: { type: String, required: [true, 'Informe o nome do ciclo de pagamento'] },
   month: {
     type: Number,
