@@ -3,8 +3,19 @@
 }
 
 .main-header .logo {
+  background-color: #1f3e69 !important;
   height: 60px !important;
   text-decoration: none;
+}
+
+.main-header .navbar {
+  background: linear-gradient(to right, #2e4769, #1e3d68) !important;
+}
+.main-header li.user-header {
+  background-color: #1e3d68 !important;
+}
+.user-footer {
+  background-color: #4d668a !important;
 }
 .dropdown-toggle {
   text-decoration: none !important;

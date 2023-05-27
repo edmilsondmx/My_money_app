@@ -13,7 +13,7 @@ const Header = (props) => {
             {' '}
             <i className="fa fa-money me-2"></i> My
           </b>{' '}
-          Money
+          Money APP
         </span>
       </button>
       <nav className="navbar navbar-static-top flex-nowrap">
